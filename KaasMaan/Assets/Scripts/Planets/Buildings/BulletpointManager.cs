@@ -29,15 +29,13 @@ public class BulletpointManager : MonoBehaviour {
     public void generateBulletpoints(float planetSize) {
 
         updateBulletPoints(planetSize);
-
         ArrayList newBulletPoints = new ArrayList();
 
         //Bulletpoint generate algorithm
-        for (int i = 0; i < (planetSize * buildingsPerSize); i++) {
-
-            float ang = i * (360 / (planetSize * buildingsPerSize)) + bulletPoints.Count;
-            float xPos = planetCenter.position.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
-            float yPos = planetCenter.position.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
+        for (int i = bulletPoints.Count; i < (buildingsPerSize + bulletPoints.Count); i++) {
+            float ang = i * 360 / (buildingsPerSize + bulletPoints.Count);
+            float xPos = planetCenter.localPosition.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
+            float yPos = planetCenter.localPosition.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
 
             //Check if the position is available
             if (getBulletpointAtPosition(new Vector3(xPos, yPos, 0)) != null) continue;
@@ -63,14 +61,14 @@ public class BulletpointManager : MonoBehaviour {
             int index = 0;
             foreach (GameObject currentObject in bulletPoints) {
 
-                float ang = index * (360 / (planetSize * buildingsPerSize)) + bulletPoints.Count;
-                float xPos = planetCenter.position.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
-                float yPos = planetCenter.position.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
+                float ang = index * 360 / (buildingsPerSize + bulletPoints.Count);
+                float xPos = planetCenter.localPosition.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
+                float yPos = planetCenter.localPosition.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
 
                 Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
 
-                currentObject.transform.position = new Vector3(xPos, yPos, 0);
-                currentObject.transform.rotation = rotation;
+                currentObject.transform.localPosition = new Vector3(xPos, yPos, 0);
+                currentObject.transform.localRotation = rotation;
 
                 index++;
             }

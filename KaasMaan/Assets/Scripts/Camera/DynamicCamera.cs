@@ -8,6 +8,7 @@ public class DynamicCamera : MonoBehaviour {
     public Transform trackedObjectCenter;
     public Camera cam;
 
+    public float speed = 30f;
     public float extraSpacing = 3;
     public float growPerFrame = 0.1f;
     public float startZoomSize = 10;
@@ -35,11 +36,11 @@ public class DynamicCamera : MonoBehaviour {
         if (!isZoomed) return;
 
         if(Input.GetKey(KeyCode.A)) {
-            trackedObjectCenter.Rotate(new Vector3(0, 0, 0.1f));
+            trackedObjectCenter.Rotate(new Vector3(0, 0, speed * Time.deltaTime));
         }
 
         if (Input.GetKey(KeyCode.D)) {
-            trackedObjectCenter.Rotate(new Vector3(0, 0, -0.1f));
+            trackedObjectCenter.Rotate(new Vector3(0, 0, -speed * Time.deltaTime));
         }
 
     }
