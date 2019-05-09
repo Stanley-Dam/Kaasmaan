@@ -19,10 +19,10 @@ public class BulletpointManager : MonoBehaviour {
     }
 
     private void Update() {
-        if(Input.GetKey(KeyCode.A)) {
+        //Testing the planet upscaling
+        if(Input.GetKeyDown(KeyCode.S)) {
             planetSprite.localScale += new Vector3(1, 1);
             generateBulletpoints(planetSprite.localScale.x);
-            cam.orthographicSize++;
         }
     }
 
