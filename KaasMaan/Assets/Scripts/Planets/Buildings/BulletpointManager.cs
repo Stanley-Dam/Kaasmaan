@@ -30,10 +30,12 @@ public class BulletpointManager : MonoBehaviour {
 
         updateBulletPoints(planetSize);
 
+        ArrayList newBulletPoints = new ArrayList();
+
         //Bulletpoint generate algorithm
         for (int i = 0; i < (planetSize * buildingsPerSize); i++) {
 
-            float ang = i * (360 / (planetSize * buildingsPerSize));
+            float ang = i * (360 / (planetSize * buildingsPerSize)) + bulletPoints.Count;
             float xPos = planetCenter.position.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
             float yPos = planetCenter.position.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
 
@@ -46,6 +48,10 @@ public class BulletpointManager : MonoBehaviour {
             currentObject.transform.SetParent(this.transform, false);
 
             //Add bullet point to the arraylist so we can get our information later on
+            newBulletPoints.Add(currentObject);
+        }
+
+        foreach (GameObject currentObject in newBulletPoints) {
             bulletPoints.Add(currentObject);
         }
     }
@@ -57,7 +63,7 @@ public class BulletpointManager : MonoBehaviour {
             int index = 0;
             foreach (GameObject currentObject in bulletPoints) {
 
-                float ang = index * (360 / (planetSize * buildingsPerSize));
+                float ang = index * (360 / (planetSize * buildingsPerSize)) + bulletPoints.Count;
                 float xPos = planetCenter.position.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
                 float yPos = planetCenter.position.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
 
