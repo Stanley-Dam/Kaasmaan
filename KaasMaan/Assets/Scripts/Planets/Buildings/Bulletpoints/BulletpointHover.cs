@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletpointHover : MonoBehaviour {
 
+    public AudioSource audioSource;
+
     public float mouseHoverDistance = 0.5f;
     public float normalBulletpointSize = 0.3f;
     public float zoomedBulletpointSize = 1f;
@@ -30,11 +32,16 @@ public class BulletpointHover : MonoBehaviour {
 
     }
 
+    /*
+     * Animation
+     */
+
     private void startAnimation(bool zoomIn) {
-        if (!isPlayerAnimation && zoomIn) {
+        if (!isPlayerAnimation && zoomIn && this.transform.localScale.x < zoomedBulletpointSize) {
             isPlayerAnimation = true;
             StartCoroutine(doAnimation());
-        } else if(!isPlayerAnimation) {
+            playClickFX();
+        } else if(!isPlayerAnimation && !zoomIn) {
             isPlayerAnimation = true;
             StartCoroutine(undoAnimation());
         }
@@ -62,6 +69,15 @@ public class BulletpointHover : MonoBehaviour {
 
         StopCoroutine(undoAnimation());
         isPlayerAnimation = false;
+    }
+
+    /*
+     * Audio players
+     */
+
+    private void playClickFX() {
+        AudioClip clip = (AudioClip)Resources.Load("Audio/Buildings/Bulletpoint/HoverClickFX");
+        audioSource.PlayOneShot(clip);
     }
 
 }
