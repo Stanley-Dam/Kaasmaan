@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6869232741388025708}
   - component: {fileID: 3098715474739611279}
+  - component: {fileID: 5974276771583589751}
   m_Layer: 0
   m_Name: BulletPoint
   m_TagString: Untagged
@@ -79,3 +80,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5974276771583589751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6202546578886448941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfeaa5038b80954b9aa111ce9ffa27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseHoverDistance: 0.5

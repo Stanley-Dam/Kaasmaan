@@ -175,7 +175,7 @@ MonoBehaviour:
   bulletpointPrefab: {fileID: 6202546578886448941, guid: 4cfa1dc6d095c4d43a5dbac4ba7fa02f,
     type: 3}
   cam: {fileID: 519420031}
-  buildingsPerSize: 10
+  buildingsPerSize: 5
 --- !u!1 &417535889
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   trackedObjectCenter: {fileID: 417535890}
   cam: {fileID: 519420031}
   speed: 30
-  extraSpacing: 4
+  extraSpacing: 2
   growPerFrame: 0.1
   startZoomSize: 10
   maxZoomSize: 2
