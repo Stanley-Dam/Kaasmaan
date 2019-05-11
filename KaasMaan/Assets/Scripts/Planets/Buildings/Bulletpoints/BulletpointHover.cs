@@ -60,7 +60,7 @@ public class BulletpointHover : MonoBehaviour {
     }
 
     public IEnumerator undoAnimation() {
-        while (this.transform.localScale.x >= normalBulletpointSize) {
+        while (this.transform.localScale.x > normalBulletpointSize) {
 
             this.transform.localScale -= new Vector3(zoomPerMicroSecond, zoomPerMicroSecond);
             yield return new WaitForSeconds(0.01f);

@@ -43,7 +43,7 @@ public class BulletpointManager : MonoBehaviour {
             Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
 
             GameObject currentObject = Instantiate(bulletpointPrefab, new Vector3(xPos, yPos, 0), rotation);
-            currentObject.transform.SetParent(this.transform, false);
+            currentObject.transform.SetParent(planetCenter.transform, false);
 
             //Add bullet point to the arraylist so we can get our information later on
             newBulletPoints.Add(currentObject);
