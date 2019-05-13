@@ -14,8 +14,12 @@ public class DynamicCamera : MonoBehaviour {
     public float startZoomSize = 10;
     public float maxZoomSize = 9;
 
+    public Transform background;
+
     private bool isZoomed = false;
     private float prevSize = 0;
+
+    private float bulletpointsDistance = 0.75f;
 
     // Start is called before the first frame update
     void Start() {
@@ -50,10 +54,12 @@ public class DynamicCamera : MonoBehaviour {
      */
 
     private void zoomTick() {
-        //If the camera is to close to the planet
+        //If the camera is too close to the planet
         if (trackedObject.localScale.x + extraSpacing > cam.orthographicSize && !isZoomed) {
             cam.orthographicSize += growPerFrame;
         }
+
+        background.localScale = new Vector3(cam.orthographicSize/3, cam.orthographicSize/3);
 
         //When the planet gets to a size where you'll have to zoom
         if (trackedObject.localScale.x + extraSpacing >= startZoomSize && trackedObject.localScale.x > prevSize) {
@@ -63,12 +69,13 @@ public class DynamicCamera : MonoBehaviour {
             //Zoom towards a point
             transform.parent = null;
             transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0));
-            transform.position = new Vector3(0, trackedObject.localScale.y * 1.2f, this.transform.position.z);
+            transform.position = new Vector3(0, trackedObject.localScale.y * bulletpointsDistance, this.transform.position.z);
             transform.parent = trackedObjectCenter;
 
             prevSize = trackedObject.localScale.x;
             isZoomed = true;
         }
+
     }
 
 }

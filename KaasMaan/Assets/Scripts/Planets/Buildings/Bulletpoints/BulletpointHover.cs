@@ -26,7 +26,7 @@ public class BulletpointHover : MonoBehaviour {
         //Check if the mouse is close enough to play the animation
         if (Vector2.Distance(mousePosition, this.transform.position) < mouseHoverDistance) {
             startAnimation(true);
-        } else if(this.transform.localScale.x > 0.3f) {
+        } else if(this.transform.localScale.x > normalBulletpointSize) {
             startAnimation(false);
         }
 
