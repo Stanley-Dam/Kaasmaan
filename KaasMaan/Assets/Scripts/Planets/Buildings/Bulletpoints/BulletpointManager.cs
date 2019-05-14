@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletpointManager : MonoBehaviour {
 
+    public BuildingManager buildingManager;
+
     public Transform planetCenter;
     public Transform planetSprite;
     public GameObject bulletpointPrefab;
@@ -53,6 +55,7 @@ public class BulletpointManager : MonoBehaviour {
 
         foreach (GameObject currentObject in newBulletPoints) {
             bulletPoints.Add(currentObject);
+            buildingManager.CreateBuilding(0, currentObject, 0);
         }
     }
 

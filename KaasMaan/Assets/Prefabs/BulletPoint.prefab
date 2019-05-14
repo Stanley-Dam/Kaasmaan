@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6869232741388025708}
   - component: {fileID: 3098715474739611279}
+  - component: {fileID: 777690284340250032}
   - component: {fileID: 5974276771583589751}
   - component: {fileID: 1713692251390579616}
   m_Layer: 0
@@ -81,6 +82,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &777690284340250032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6202546578886448941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7ba54d85c10484d89c03577a94ac13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5974276771583589751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +109,8 @@ MonoBehaviour:
   audioSource: {fileID: 1713692251390579616}
   mouseHoverDistance: 0.5
   normalBulletpointSize: 0.1
-  zoomedBulletpointSize: 0.2
-  zoomPerMicroSecond: 0.01
+  zoomedBulletpointSize: 0.15
+  zoomPerMicroSecond: 0.015
 --- !u!82 &1713692251390579616
 AudioSource:
   m_ObjectHideFlags: 0

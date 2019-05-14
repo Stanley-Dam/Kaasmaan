@@ -106,8 +106,12 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\Camera\DynamicCamera.cs" />
+    <Compile Include="Assets\Scripts\Planets\Buildings\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\Planets\Buildings\Bulletpoints\BulletpointHover.cs" />
     <Compile Include="Assets\Scripts\Planets\Buildings\Bulletpoints\BulletpointManager.cs" />
+    <Compile Include="Assets\Scripts\Planets\Buildings\Bulletpoints\MainBulletpoint.cs" />
+    <Compile Include="Assets\Scripts\Planets\Buildings\Data\Building.cs" />
+    <Compile Include="Assets\Scripts\Planets\Buildings\Data\BuildingTypes.cs" />
     <Compile Include="Assets\Scripts\Planets\Planets\MainPlanet.cs" />
     <Compile Include="Assets\SpriteGlow\SpriteGlowEffect.cs" />
     <Compile Include="Assets\SpriteGlow\SpriteGlowMaterial.cs" />
@@ -153,6 +157,12 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+    <Reference Include="Unity.VectorGraphics">
+      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.003">
+      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -162,20 +172,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VectorGraphics.Editor">
+      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VectorGraphics">
-      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.003">
-      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VectorGraphics.Editor">
-      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
