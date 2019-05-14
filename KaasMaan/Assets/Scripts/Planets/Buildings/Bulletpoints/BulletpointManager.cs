@@ -13,6 +13,8 @@ public class BulletpointManager : MonoBehaviour {
 
     private ArrayList bulletPoints = new ArrayList();
 
+    private float bulletpointsDistance = 0.475f;
+
     // Start is called before the first frame update
     void Start() {
         generateBulletpoints(planetSprite.localScale.x);
@@ -34,8 +36,8 @@ public class BulletpointManager : MonoBehaviour {
         //Bulletpoint generate algorithm
         for (int i = bulletPoints.Count; i < (buildingsPerSize + bulletPoints.Count); i++) {
             float ang = i * 360 / (buildingsPerSize + bulletPoints.Count);
-            float xPos = planetCenter.localPosition.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
-            float yPos = planetCenter.localPosition.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
+            float xPos = planetCenter.localPosition.x + planetSize * bulletpointsDistance * Mathf.Sin(ang * Mathf.Deg2Rad);
+            float yPos = planetCenter.localPosition.y + planetSize * bulletpointsDistance * Mathf.Cos(ang * Mathf.Deg2Rad);
 
             //Check if the position is available
             if (getBulletpointAtPosition(new Vector3(xPos, yPos, 0)) != null) continue;
@@ -62,8 +64,8 @@ public class BulletpointManager : MonoBehaviour {
             foreach (GameObject currentObject in bulletPoints) {
 
                 float ang = index * 360 / (buildingsPerSize + bulletPoints.Count);
-                float xPos = planetCenter.localPosition.x + planetSize * 1.2f * Mathf.Sin(ang * Mathf.Deg2Rad);
-                float yPos = planetCenter.localPosition.y + planetSize * 1.2f * Mathf.Cos(ang * Mathf.Deg2Rad);
+                float xPos = planetCenter.localPosition.x + planetSize * bulletpointsDistance * Mathf.Sin(ang * Mathf.Deg2Rad);
+                float yPos = planetCenter.localPosition.y + planetSize * bulletpointsDistance * Mathf.Cos(ang * Mathf.Deg2Rad);
 
                 Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
 

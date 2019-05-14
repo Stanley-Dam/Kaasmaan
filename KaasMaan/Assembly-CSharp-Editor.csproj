@@ -109,6 +109,15 @@
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VectorGraphics">
+      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.003">
+      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VectorGraphics.Editor">
+      <HintPath>C:/Users/ditis/Documents/ma/bewijzenmap/periode1.4/proj/Github/Kaasmaan/KaasMaan/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
