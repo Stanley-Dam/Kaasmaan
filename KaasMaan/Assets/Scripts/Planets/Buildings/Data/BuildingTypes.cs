@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class BuildingTypes {
 
-    public static readonly BuildingTypes NONE = new BuildingTypes(0, "", "");
-    public static readonly BuildingTypes FACTORY = new BuildingTypes(1, "Sprites/Buildings/Factory/", "factory_level_");
-    public static readonly BuildingTypes HOUSING = new BuildingTypes(2, "Sprites/Buildings/Housing/", "housing_level_");
-    public static readonly BuildingTypes MEADOW = new BuildingTypes(3, "Sprites/Buildings/Meadow/", "meadow_level_");
-    public static readonly BuildingTypes EXPIRIMENTAL = new BuildingTypes(4, "Sprites/Buildings/Expirimental/", "expirimental_level_");
+    public static readonly BuildingTypes NONE = new BuildingTypes(0, "", "", 0);
+    public static readonly BuildingTypes FACTORY = new BuildingTypes(1, "Sprites/Buildings/Factory/", "factory_level_", 5);
+    public static readonly BuildingTypes HOUSING = new BuildingTypes(2, "Sprites/Buildings/Housing/", "housing_level_", 5);
+    public static readonly BuildingTypes MEADOW = new BuildingTypes(3, "Sprites/Buildings/Meadow/", "meadow_level_", 5);
+    public static readonly BuildingTypes EXPIRIMENTAL = new BuildingTypes(4, "Sprites/Buildings/Expirimental/", "expirimental_level_", 5);
 
     private int typeID;
     private string spritesPath;
     private string spritesName;
+    private int spriteUpgradeDiv;
 
-    BuildingTypes(int typeID, string spritesPath, string spritesName) => (this.typeID, this.spritesPath, this.spritesName) = (typeID, spritesPath, spritesName);
+    BuildingTypes(int typeID, string spritesPath, string spritesName, int spriteUpgradeDiv) => (this.typeID, this.spritesPath, this.spritesName, this.spriteUpgradeDiv) = (typeID, spritesPath, spritesName, spriteUpgradeDiv);
 
     public static IEnumerable<BuildingTypes> Values {
         get {
@@ -36,6 +37,30 @@ public class BuildingTypes {
 
     public string getSpriteName() {
         return this.spritesName;
+    }
+
+    public int getSpriteUpgradeDiv() {
+        return this.spriteUpgradeDiv;
+    }
+
+    public static BuildingTypes getBuildingFromTypeID(int typeID) {
+        foreach(BuildingTypes currentType in BuildingTypes.Values) {
+            if (currentType.getTypeId() == typeID) return currentType;
+        }
+
+        return null;
+    }
+
+    public static string LevelToStringTranslator(int level) {
+        string levelString = "";
+
+        if (level < 10)
+            levelString = "0" + level;
+        else {
+            levelString = "" + level;
+        }
+
+        return levelString;
     }
 
 }

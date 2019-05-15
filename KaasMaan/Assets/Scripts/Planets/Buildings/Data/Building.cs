@@ -22,14 +22,8 @@ public class Building {
 
     }
 
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
+    public void setBuildingType(BuildingTypes buildingType) {
+        this.buildingType = buildingType.getTypeId();
     }
 
     public int getBuildingID() {
@@ -40,12 +34,24 @@ public class Building {
         return bulletpoint;
     }
 
-    public int getBuildingType() {
+    public int getBuildingTypeID() {
         return buildingType;
+    }
+
+    public BuildingTypes getBuildingType() {
+        return BuildingTypes.getBuildingFromTypeID(this.buildingType);
     }
 
     public int getLevel() {
         return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void LevelUp() {
+        this.level++;
     }
 
 }

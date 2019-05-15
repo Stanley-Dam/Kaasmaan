@@ -47,7 +47,7 @@ public class BuildingManager : MonoBehaviour {
 
         int index = 0;
         foreach (Building currentBuilding in buildings) {
-            if (currentBuilding.getBuildingType() == buildingType) {
+            if (currentBuilding.getBuildingTypeID() == buildingType) {
                 buildingsList[index] = currentBuilding;
                 index++;
             }

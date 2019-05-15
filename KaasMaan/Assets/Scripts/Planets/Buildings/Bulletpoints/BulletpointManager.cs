@@ -44,10 +44,16 @@ public class BulletpointManager : MonoBehaviour {
             //Check if the position is available
             if (getBulletpointAtPosition(new Vector3(xPos, yPos, 0)) != null) continue;
 
-            Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
+            GameObject currentObject = Instantiate(bulletpointPrefab);
+            currentObject.transform.position = new Vector3(xPos, yPos, 0);
 
-            GameObject currentObject = Instantiate(bulletpointPrefab, new Vector3(xPos, yPos, 0), rotation);
             currentObject.transform.SetParent(planetCenter.transform, false);
+
+            //Rotate the bulletpoint
+            Vector3 diff = planetCenter.localPosition - currentObject.transform.localPosition;
+            diff.Normalize();
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            currentObject.transform.localRotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
             //Add bullet point to the arraylist so we can get our information later on
             newBulletPoints.Add(currentObject);
@@ -70,10 +76,13 @@ public class BulletpointManager : MonoBehaviour {
                 float xPos = planetCenter.localPosition.x + planetSize * bulletpointsDistance * Mathf.Sin(ang * Mathf.Deg2Rad);
                 float yPos = planetCenter.localPosition.y + planetSize * bulletpointsDistance * Mathf.Cos(ang * Mathf.Deg2Rad);
 
-                Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
-
                 currentObject.transform.localPosition = new Vector3(xPos, yPos, 0);
-                currentObject.transform.localRotation = rotation;
+
+                //Rotate the bulletpoint
+                Vector3 diff = planetCenter.localPosition - currentObject.transform.localPosition;
+                diff.Normalize();
+                float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+                currentObject.transform.localRotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
                 index++;
             }

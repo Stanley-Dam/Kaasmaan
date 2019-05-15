@@ -11,6 +11,8 @@ public class BulletpointHover : MonoBehaviour {
     public float zoomedBulletpointSize = 1f;
     public float zoomPerMicroSecond = 0.1f;
 
+    public bool isInRange = false;
+
     private bool isPlayerAnimation = false;
 
     // Start is called before the first frame update
@@ -57,6 +59,7 @@ public class BulletpointHover : MonoBehaviour {
 
         StopCoroutine(doAnimation());
         isPlayerAnimation = false;
+        isInRange = true;
     }
 
     public IEnumerator undoAnimation() {
@@ -69,6 +72,7 @@ public class BulletpointHover : MonoBehaviour {
 
         StopCoroutine(undoAnimation());
         isPlayerAnimation = false;
+        isInRange = false;
     }
 
     /*
