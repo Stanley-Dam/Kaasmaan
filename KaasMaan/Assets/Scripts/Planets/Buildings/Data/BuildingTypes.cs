@@ -8,14 +8,21 @@ public class BuildingTypes {
     public static readonly BuildingTypes FACTORY = new BuildingTypes(1, "Sprites/Buildings/Factory/", "factory_level_", 5);
     public static readonly BuildingTypes HOUSING = new BuildingTypes(2, "Sprites/Buildings/Housing/", "housing_level_", 5);
     public static readonly BuildingTypes MEADOW = new BuildingTypes(3, "Sprites/Buildings/Meadow/", "meadow_level_", 5);
-    public static readonly BuildingTypes EXPIRIMENTAL = new BuildingTypes(4, "Sprites/Buildings/Expirimental/", "expirimental_level_", 5);
+    public static readonly BuildingTypes STORAGE = new BuildingTypes(4, "Sprites/Buildings/Storage/", "storage_level_", 5);
+    public static readonly BuildingTypes MARKET = new BuildingTypes(5, "Sprites/Buildings/MarketPlace/", "marketplace_level_", 5);
+
 
     private int typeID;
     private string spritesPath;
     private string spritesName;
     private int spriteUpgradeDiv;
 
-    BuildingTypes(int typeID, string spritesPath, string spritesName, int spriteUpgradeDiv) => (this.typeID, this.spritesPath, this.spritesName, this.spriteUpgradeDiv) = (typeID, spritesPath, spritesName, spriteUpgradeDiv);
+    BuildingTypes
+        (int typeID, string spritesPath, string spritesName, int spriteUpgradeDiv) 
+        => 
+        (this.typeID, this.spritesPath, this.spritesName, this.spriteUpgradeDiv) 
+        = 
+        (typeID, spritesPath, spritesName, spriteUpgradeDiv);
 
     public static IEnumerable<BuildingTypes> Values {
         get {
@@ -23,7 +30,8 @@ public class BuildingTypes {
             yield return FACTORY;
             yield return HOUSING;
             yield return MEADOW;
-            yield return EXPIRIMENTAL;
+            yield return STORAGE;
+            yield return MARKET;
         }
     }
 

@@ -19,6 +19,7 @@ public class BulletpointManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        planetSprite.localScale = new Vector3(2.5f, 2.5f);
         generateBulletpoints(planetSprite.localScale.x);
     }
 

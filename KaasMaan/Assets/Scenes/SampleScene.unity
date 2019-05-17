@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 126693360}
   - component: {fileID: 126693361}
   - component: {fileID: 126693358}
+  - component: {fileID: 126693362}
   m_Layer: 0
   m_Name: MainPlanet
   m_TagString: Untagged
@@ -197,6 +198,18 @@ MonoBehaviour:
     type: 3}
   cam: {fileID: 519420031}
   buildingsPerSize: 5
+--- !u!114 &126693362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126693357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84bca0c65fbfda4dbb40a49d9038d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &268740512
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,12 @@ public class BulletpointHover : MonoBehaviour {
     public float normalBulletpointSize = 0.3f;
     public float zoomedBulletpointSize = 1f;
     public float zoomPerMicroSecond = 0.1f;
+    public float buildingSizeMulitplier = 1f;
 
     public bool isInRange = false;
 
     private bool isPlayerAnimation = false;
+    private bool buildingZoom = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -21,6 +23,14 @@ public class BulletpointHover : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+        if (this.gameObject.GetComponent<MainBulletpoint>().getBuilding().getBuildingTypeID() != 0 && !buildingZoom) {
+            normalBulletpointSize *= buildingSizeMulitplier;
+            zoomedBulletpointSize *= buildingSizeMulitplier;
+
+            this.transform.localScale = new Vector3(normalBulletpointSize, normalBulletpointSize);
+            buildingZoom = true;
+        }
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
