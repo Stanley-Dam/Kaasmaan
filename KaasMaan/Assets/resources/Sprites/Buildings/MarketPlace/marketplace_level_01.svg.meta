@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1771413b274416943b7ad8bc3ab357d7
+guid: 31352e173a2ff5a47842bcb5f4faa6a7
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/marketplace_level_01
-    400000: gameObject/marketplace_level_01/Transform
-    21200000: gameObject/marketplace_level_01/SpriteRenderer
+    100002: gameObject/marketplace_level_01
+    400002: gameObject/marketplace_level_01/Transform
+    21200002: gameObject/marketplace_level_01/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -17,7 +17,7 @@ ScriptedImporter:
   svgPixelsPerUnit: 100
   gradientResolution: 128
   alignment: 9
-  customPivot: {x: 0.50073725, y: 0.03304339}
+  customPivot: {x: 0.50412613, y: 0.02549368}
   generatePhysicsShape: 0
   preserveViewport: 0
   advancedMode: 0
@@ -42,7 +42,7 @@ ScriptedImporter:
     SpriteRect:
       name: marketplace_level_01Sprite
       originalName: 
-      pivot: {x: 0.50073725, y: 0.03304339}
+      pivot: {x: 0.50412613, y: 0.02549368}
       alignment: 9
       border: {x: 0, y: 0, z: 0, w: 0}
       rect:
@@ -50,6 +50,6 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 100
-        height: 30
-      spriteID: 2ca0e880c0dc1ff4ba46f43888567e44
+        height: 56
+      spriteID: 9daf85f78e43f8b4e8f338128b18e8be
     PhysicsOutlines: []

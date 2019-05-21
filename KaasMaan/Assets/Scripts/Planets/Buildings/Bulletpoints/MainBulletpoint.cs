@@ -17,16 +17,16 @@ public class MainBulletpoint : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(Input.GetMouseButton(0) && this.gameObject.GetComponent<BulletpointHover>().isInRange) {
-            this.building.setBuildingType(BuildingTypes.FACTORY);
+        if(Input.GetMouseButton(0) && this.gameObject.GetComponent<BulletpointHover>().isInRange && ShopManager.buildingTypeOnMouse != null && !hasBuildingSprite) {
+            this.building.setBuildingType(ShopManager.buildingTypeOnMouse);
             this.building.setLevel(1);
 
             UpdateBuilding();
+            ShopManager.hasPlaced();
         }
     }
 
     public void UpdateBuilding() {
-        if (hasBuildingSprite) return;
 
         //Setting the sprite of the building
         string spritePath = building.getBuildingType().getSpritePath();
