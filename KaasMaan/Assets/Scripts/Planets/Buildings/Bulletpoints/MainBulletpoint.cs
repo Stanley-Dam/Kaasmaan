@@ -10,6 +10,8 @@ public class MainBulletpoint : MonoBehaviour {
     private Building building;
     private bool hasBuildingSprite = false;
 
+    public GameObject smoke;
+
     // Start is called before the first frame update
     void Start() {
         
@@ -40,7 +42,8 @@ public class MainBulletpoint : MonoBehaviour {
             case 0:
                 break;
             case 1:
-                this.gameObject.AddComponent<Factory>();
+                Factory currentBuilding = this.gameObject.AddComponent<Factory>();
+                currentBuilding.mainBulletpoint = this;
                 break;
         }
 

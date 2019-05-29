@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRederer: {fileID: 3098715474739611279}
+  smoke: {fileID: 6637641445858291630, guid: 8ac93ddac24d3435e9fd508a5ae5f862, type: 3}
 --- !u!114 &5974276771583589751
 MonoBehaviour:
   m_ObjectHideFlags: 0
