@@ -17,7 +17,8 @@ public class Factory : MonoBehaviour {
         GameObject Smoke = Instantiate(mainBulletpoint.smoke, transform.position, Quaternion.identity);
         Smoke.transform.SetParent(this.transform);
         Smoke.transform.localPosition = new Vector3(0, 1);
-    }
+        Smoke.transform.rotation = transform.rotation;
+        }
 
     // Update is called once per frame
     void Update() {

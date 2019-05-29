@@ -11,6 +11,7 @@ public class MainBulletpoint : MonoBehaviour {
     private bool hasBuildingSprite = false;
 
     public GameObject smoke;
+    public GameObject placedEffect;
 
     // Start is called before the first frame update
     void Start() {
@@ -25,6 +26,9 @@ public class MainBulletpoint : MonoBehaviour {
 
             UpdateBuilding();
             ShopManager.hasPlaced();
+
+            placedEffect = Instantiate(placedEffect, transform.position, Quaternion.identity);
+            placedEffect.transform.SetParent(this.transform);
         }
     }
 

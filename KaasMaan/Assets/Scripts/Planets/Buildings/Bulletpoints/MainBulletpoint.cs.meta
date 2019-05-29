@@ -6,6 +6,8 @@ MonoImporter:
   defaultReferences:
   - spriteRederer: {instanceID: 0}
   - smoke: {fileID: 6637641445858291630, guid: 8ac93ddac24d3435e9fd508a5ae5f862, type: 3}
+  - placedEffect: {fileID: 5253145139648398386, guid: 616d0319563bf4a96b688f6b73555238,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
