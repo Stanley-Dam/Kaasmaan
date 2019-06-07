@@ -48,6 +48,17 @@ public class MainBulletpoint : MonoBehaviour {
             case 1:
                 Factory currentBuilding = this.gameObject.AddComponent<Factory>();
                 currentBuilding.mainBulletpoint = this;
+                //Instantiates smoke for the level 1 factory
+                GameObject Smoke = Instantiate(smoke, transform.position, Quaternion.identity);
+                Smoke.transform.SetParent(currentBuilding.transform);
+                Smoke.transform.localPosition = new Vector3(0, 1);
+                Smoke.transform.rotation = transform.rotation;
+                break;
+            case 2:
+                Smoke = Instantiate(smoke, transform.position, Quaternion.identity);
+                Smoke.transform.SetParent(this.transform);
+                Smoke.transform.localPosition = new Vector3(0.2f, 0.5f);
+                Smoke.transform.rotation = transform.rotation;
                 break;
         }
 
