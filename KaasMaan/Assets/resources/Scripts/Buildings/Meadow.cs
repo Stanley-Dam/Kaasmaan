@@ -10,7 +10,6 @@ public class Meadow : MonoBehaviour {
 
     public MainBulletpoint mainBulletpoint;
 
-
     // Start is called before the first frame update
     void Start() {
         StartCoroutine(GenerateMilkCooldown());

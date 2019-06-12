@@ -18,6 +18,68 @@ public class MainBulletpoint : MonoBehaviour {
         
     }
 
+    public bool IsWorkable() {
+        bool isWorkable = false;
+
+        switch (building.getBuildingTypeID()) {
+            case 1:
+                //FACTORY
+                isWorkable = true;
+                break;
+            case 3:
+                //MEADOW
+                isWorkable = true;
+                break;
+        }
+
+        return isWorkable;
+    }
+
+    public int GetWorkingCivilianAmount() {
+        int workingCivs = 0;
+
+        //Getting civs amount on current building
+        switch (building.getBuildingTypeID()) {
+            case 0:
+                //NONE
+                break;
+            case 1:
+                //FACTORY
+                Factory factory = this.gameObject.GetComponent<Factory>();
+                workingCivs = factory.workingCivilianAmount;
+                break;
+            case 2:
+                break;
+            case 3:
+                //MEADOW
+                Meadow meadow = this.gameObject.GetComponent<Meadow>();
+                workingCivs = meadow.workingCivilianAmount;
+                break;
+        }
+
+        return workingCivs;
+    }
+
+    public void AddWorkingCiviliansToBuilding(int amount) {
+        switch (building.getBuildingTypeID()) {
+            case 0:
+                //NONE
+                break;
+            case 1:
+                //FACTORY
+                Factory factory = this.gameObject.GetComponent<Factory>();
+                factory.workingCivilianAmount += amount;
+                break;
+            case 2:
+                break;
+            case 3:
+                //MEADOW
+                Meadow meadow = this.gameObject.GetComponent<Meadow>();
+                meadow.workingCivilianAmount += amount;
+                break;
+        }
+    }
+
     // Update is called once per frame
     void Update() {
         if(Input.GetMouseButton(0) && this.gameObject.GetComponent<BulletpointHover>().isInRange && ShopManager.buildingTypeOnMouse != null && !hasBuildingSprite) {
@@ -31,6 +93,8 @@ public class MainBulletpoint : MonoBehaviour {
 
             placedEffect = Instantiate(placedEffect, transform.position, Quaternion.identity);
             placedEffect.transform.SetParent(this.transform);
+        } else if(Input.GetMouseButton(0) && this.gameObject.GetComponent<BulletpointHover>().isInRange && hasBuildingSprite) {
+            GameManager.selectedBulletpoint = this.gameObject;
         }
     }
 
@@ -60,6 +124,9 @@ public class MainBulletpoint : MonoBehaviour {
                 break;
             case 2:
                 //HOUSING
+                Housing house = this.gameObject.AddComponent<Housing>();
+                house.mainBulletpoint = this;
+                //Instantiates smoke for the level 1 house
                 Smoke = Instantiate(smoke, transform.position, Quaternion.identity);
                 Smoke.transform.SetParent(this.transform);
                 Smoke.transform.localPosition = new Vector3(0.2f, 0.5f);

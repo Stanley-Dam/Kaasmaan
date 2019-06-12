@@ -11,12 +11,15 @@ public class GameManager : MonoBehaviour {
     public static int amountOfWorkingCivilians = 0;
     public static int planetLevel = 1;
 
-    public static GameObject selectedBuilding;
+    public static GameObject selectedBulletpoint;
 
     [SerializeField] private Image progressBar;
     [SerializeField] private Text amountOfMilkUI;
     [SerializeField] private Text amountOfCheeseUI;
     [SerializeField] private Text amountOfCiviliansUI;
+
+    [SerializeField] private GameObject buildingSettings;
+    [SerializeField] private Text workingCiviliansAtBuilding;
 
     private float level = 0;
 
@@ -34,5 +37,28 @@ public class GameManager : MonoBehaviour {
         amountOfMilkUI.text = "" + amountOfMilk;
         amountOfCheeseUI.text = "" + amountOfCheese;
         amountOfCiviliansUI.text = "" + amountOfCivilians;
+
+        //Update the building menu
+        buildingSettings.active = (selectedBulletpoint != null && selectedBulletpoint.GetComponent<MainBulletpoint>().IsWorkable());
+
+        if(buildingSettings.active) {
+            workingCiviliansAtBuilding.text = "" + selectedBulletpoint.GetComponent<MainBulletpoint>().GetWorkingCivilianAmount() + " / " + (amountOfCivilians - amountOfWorkingCivilians);
+        }
+    }
+
+    public void AddCivsToSelectedBuilding() {
+        if (amountOfCivilians - amountOfWorkingCivilians < 1)
+            return;
+
+        selectedBulletpoint.GetComponent<MainBulletpoint>().AddWorkingCiviliansToBuilding(1);
+        amountOfWorkingCivilians++;
+    }
+
+    public void RemoveCivsFromSelectedBuilding() {
+        if (selectedBulletpoint.GetComponent<MainBulletpoint>().GetWorkingCivilianAmount() < 1)
+            return;
+
+        selectedBulletpoint.GetComponent<MainBulletpoint>().AddWorkingCiviliansToBuilding(-1);
+        amountOfWorkingCivilians--;
     }
 }
