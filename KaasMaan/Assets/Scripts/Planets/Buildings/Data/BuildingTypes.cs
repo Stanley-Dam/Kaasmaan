@@ -5,11 +5,11 @@ using UnityEngine;
 public class BuildingTypes {
 
     public static readonly BuildingTypes NONE = new BuildingTypes(0, "", "", 0, 0);
-    public static readonly BuildingTypes FACTORY = new BuildingTypes(1, "Sprites/Buildings/Factory/", "factory_level_", 5, 150);
-    public static readonly BuildingTypes HOUSING = new BuildingTypes(2, "Sprites/Buildings/Housing/", "housing_level_", 5, 50);
-    public static readonly BuildingTypes MEADOW = new BuildingTypes(3, "Sprites/Buildings/Meadow/", "meadow_level_", 5, 100);
-    public static readonly BuildingTypes STORAGE = new BuildingTypes(4, "Sprites/Buildings/Storage/", "storage_level_", 5, 100);
-    public static readonly BuildingTypes MARKET = new BuildingTypes(5, "Sprites/Buildings/MarketPlace/", "marketplace_level_", 5, 100);
+    public static readonly BuildingTypes FACTORY = new BuildingTypes(1, "Sprites/Buildings/Factory/", "factory_level_", 1, 150);
+    public static readonly BuildingTypes HOUSING = new BuildingTypes(2, "Sprites/Buildings/Housing/", "housing_level_", 1, 50);
+    public static readonly BuildingTypes MEADOW = new BuildingTypes(3, "Sprites/Buildings/Meadow/", "meadow_level_", 1, 100);
+    public static readonly BuildingTypes STORAGE = new BuildingTypes(4, "Sprites/Buildings/Storage/", "storage_level_", 1, 100);
+    public static readonly BuildingTypes MARKET = new BuildingTypes(5, "Sprites/Buildings/MarketPlace/", "marketplace_level_", 1, 100);
 
     private int typeID;
     private string spritesPath;

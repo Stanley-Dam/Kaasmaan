@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9196593d12a5a564782dc8e32563827c
+guid: 8057e7dea5d7374419528377a60cd13c
 ScriptedImporter:
   fileIDToRecycleName:
     100002: gameObject/factory_level_01
@@ -17,7 +17,7 @@ ScriptedImporter:
   svgPixelsPerUnit: 100
   gradientResolution: 128
   alignment: 9
-  customPivot: {x: 0.5, y: 0.0469619}
+  customPivot: {x: 0.47048843, y: 0.09864248}
   generatePhysicsShape: 0
   preserveViewport: 0
   advancedMode: 0
@@ -42,14 +42,14 @@ ScriptedImporter:
     SpriteRect:
       name: factory_level_01Sprite
       originalName: 
-      pivot: {x: 0.5, y: 0.0469619}
+      pivot: {x: 0.47048843, y: 0.09864248}
       alignment: 9
       border: {x: 0, y: 0, z: 0, w: 0}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 79
-        height: 100
-      spriteID: 169816071f6656d4783938297dcb6024
+        width: 92
+        height: 80
+      spriteID: d35d4396670b1d640bd6a4e0d7ae2a10
     PhysicsOutlines: []

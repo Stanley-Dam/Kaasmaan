@@ -15,6 +15,7 @@ public class DynamicCamera : MonoBehaviour {
     public float maxZoomSize = 9;
 
     public Transform background;
+    public Transform buildingViewer;
 
     private bool isZoomed = false;
     private float prevSize = 0;
@@ -60,6 +61,8 @@ public class DynamicCamera : MonoBehaviour {
         }
 
         background.localScale = new Vector3(cam.orthographicSize/3, cam.orthographicSize/3);
+        buildingViewer.localScale = new Vector3(cam.orthographicSize / 3, cam.orthographicSize / 3);
+        buildingViewer.localPosition = new Vector3(-(cam.orthographicSize), -(cam.orthographicSize * 0.95f), 1);
 
         //When the planet gets to a size where you'll have to zoom
         if (trackedObject.localScale.x + extraSpacing >= startZoomSize && trackedObject.localScale.x > prevSize) {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d32c92e2518158d46affa2365e8734b7
+guid: eb3c7e818d7ed374da42ac98c41cf207
 ScriptedImporter:
   fileIDToRecycleName:
     100002: gameObject/meadow_level_01
@@ -17,7 +17,7 @@ ScriptedImporter:
   svgPixelsPerUnit: 100
   gradientResolution: 128
   alignment: 9
-  customPivot: {x: 0.51219076, y: 0.059023596}
+  customPivot: {x: 0.49583462, y: 0.06375349}
   generatePhysicsShape: 0
   preserveViewport: 0
   advancedMode: 0
@@ -42,14 +42,14 @@ ScriptedImporter:
     SpriteRect:
       name: meadow_level_01Sprite
       originalName: 
-      pivot: {x: 0.51219076, y: 0.059023596}
+      pivot: {x: 0.49583462, y: 0.06375349}
       alignment: 9
       border: {x: 0, y: 0, z: 0, w: 0}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 89
-        height: 32
-      spriteID: 395addd7f5df78e4da7d0339188a2b48
+        width: 97
+        height: 92
+      spriteID: 996e3a45a04f6c54cb7642fa4d9986f1
     PhysicsOutlines: []
