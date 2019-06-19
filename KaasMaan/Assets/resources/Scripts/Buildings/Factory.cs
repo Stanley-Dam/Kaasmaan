@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Factory : MonoBehaviour {
 
-    public float cooldownTickPerMiliSecond = 0.02f;
+    public float cooldownTickPerMiliSecond = 0.05f;
     private float generateCooldownTick = 0;
     public float amountOfCheasePerLevel = 5;
     public int workingCivilianAmount = 0;

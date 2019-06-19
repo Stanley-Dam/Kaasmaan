@@ -34,10 +34,22 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        //Update the progressBar
-        progressBar.fillAmount = amountOfCheese / (planetLevel * 1000);
+        //Check if there are enough civs to provide for all the buildings
+        if(amountOfWorkingCivilians > amountOfCivilians) {
+            foreach(GameObject bulletPoint in this.gameObject.GetComponent<BulletpointManager>().bulletPoints) {
+                if (bulletPoint == null) continue;
+                if (bulletPoint.GetComponent<MainBulletpoint>().IsWorkable()) {
+                    amountOfWorkingCivilians -= bulletPoint.GetComponent<MainBulletpoint>().GetWorkingCivilianAmount();
+                    bulletPoint.GetComponent<MainBulletpoint>().AddWorkingCiviliansToBuilding(-bulletPoint.GetComponent<MainBulletpoint>().GetWorkingCivilianAmount());
+                }
+                if (amountOfWorkingCivilians <= amountOfCivilians) break;
+            }
+        }
 
-        ExpandButton.active = amountOfCheese >= (planetLevel * 1000);
+        //Update the progressBar
+        progressBar.fillAmount = amountOfCheese / (planetLevel * (1000 * planetLevel));
+
+        ExpandButton.active = amountOfCheese >= (planetLevel * (1000 * planetLevel));
 
         //Update the UI
         amountOfMilkUI.text = "" + amountOfMilk;

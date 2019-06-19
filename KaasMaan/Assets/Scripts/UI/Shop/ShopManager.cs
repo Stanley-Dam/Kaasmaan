@@ -73,6 +73,15 @@ public class ShopManager : MonoBehaviour {
 
     public void SelectedBuildingMerging() {
 
+        if (GameManager.selectedBulletpoint.GetComponent<MainBulletpoint>().getBuilding().getLevel() >= GameManager.selectedBulletpoint.GetComponent<MainBulletpoint>().getBuilding().getBuildingType().GetMaxLevel())
+            return;
+
+        if (BuildingTypes.getBuildingFromTypeID(
+            GameManager.selectedBulletpoint.GetComponent<MainBulletpoint>().getBuilding().getBuildingTypeID()).GetBuildingCost() 
+            * (GameManager.selectedBulletpoint.GetComponent<MainBulletpoint>().getBuilding().getLevel()*2) 
+            > GameManager.amountOfCheese)
+            return;
+
         //Equip the building
         if (equipPrefab != null) {
             if (createdObjects.Count != 1) {

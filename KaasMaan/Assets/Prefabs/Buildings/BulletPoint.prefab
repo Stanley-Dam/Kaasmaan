@@ -114,7 +114,7 @@ MonoBehaviour:
   mouseHoverDistance: 0.5
   normalBulletpointSize: 0.1
   zoomedBulletpointSize: 0.15
-  zoomPerMicroSecond: 0.015
+  zoomPerMicroSecond: 0.05
   buildingSizeMulitplier: 8
   isInRange: 0
 --- !u!82 &1713692251390579616

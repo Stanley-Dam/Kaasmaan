@@ -32,6 +32,10 @@ public class MainBulletpoint : MonoBehaviour {
                 //MEADOW
                 isWorkable = true;
                 break;
+            case 4:
+                //RESEARCH
+                isWorkable = true;
+                break;
         }
 
         return isWorkable;
@@ -51,11 +55,17 @@ public class MainBulletpoint : MonoBehaviour {
                 workingCivs = factory.workingCivilianAmount;
                 break;
             case 2:
+                //HOUSING
                 break;
             case 3:
                 //MEADOW
                 Meadow meadow = this.gameObject.GetComponent<Meadow>();
                 workingCivs = meadow.workingCivilianAmount;
+                break;
+            case 4:
+                //RESEARCH
+                Research research = this.gameObject.GetComponent<Research>();
+                workingCivs = research.workingCivilianAmount;
                 break;
         }
 
@@ -73,11 +83,17 @@ public class MainBulletpoint : MonoBehaviour {
                 factory.workingCivilianAmount += amount;
                 break;
             case 2:
+                //HOUSING
                 break;
             case 3:
                 //MEADOW
                 Meadow meadow = this.gameObject.GetComponent<Meadow>();
                 meadow.workingCivilianAmount += amount;
+                break;
+            case 4:
+                //RESEARCH
+                Research research = this.gameObject.GetComponent<Research>();
+                research.workingCivilianAmount += amount;
                 break;
         }
     }
@@ -98,7 +114,9 @@ public class MainBulletpoint : MonoBehaviour {
             this.building.setLevel(1);
 
             UpdateBuilding();
-            ShopManager.hasPlaced();
+
+            if (!(Input.GetKey(KeyCode.LeftShift) && GameManager.amountOfCheese > building.getBuildingType().GetBuildingCost()))
+                ShopManager.hasPlaced();
 
             placedEffect = Instantiate(placedEffect, transform.position, Quaternion.identity);
             placedEffect.transform.SetParent(this.transform);
@@ -113,6 +131,7 @@ public class MainBulletpoint : MonoBehaviour {
 
             //If the building is mergeable
             AddWorkingCiviliansToBuilding(ShopManager.mergeBuildingBulletpoint.GetComponent<MainBulletpoint>().GetWorkingCivilianAmount());
+            if (building.getBuildingType().Equals(BuildingTypes.HOUSING)) this.gameObject.GetComponent<Housing>().LevelUp();
             Vector3 bulletpointPos = ShopManager.mergeBuildingBulletpoint.transform.localPosition;
             Destroy(ShopManager.mergeBuildingBulletpoint);
 
@@ -135,12 +154,14 @@ public class MainBulletpoint : MonoBehaviour {
             mainPlanet.GetComponent<BulletpointManager>().bulletPoints.Add(currentObject);
             mainPlanet.GetComponent<BulletpointManager>().buildingManager.CreateBuilding(0, currentObject, 0);
 
+            GameManager.amountOfCheese -= building.getBuildingType().GetBuildingCost() * building.getLevel();
             ShopManager.hasPlaced();
         }
     }
 
     public void Salvage() {
         GameManager.amountOfWorkingCivilians -= GetWorkingCivilianAmount();
+        if (building.getBuildingType().Equals(BuildingTypes.HOUSING)) GameManager.amountOfCivilians -= this.gameObject.GetComponent<Housing>().GetCivs();
         Vector3 bulletpointPos = this.transform.localPosition;
 
         mainPlanet = this.transform.parent.parent.gameObject;
@@ -215,6 +236,13 @@ public class MainBulletpoint : MonoBehaviour {
                     meadow.mainBulletpoint = this;
                 }
 
+                break;
+            case 4:
+                //RESEARCH
+                if (!this.gameObject.GetComponent<Research>()) {
+                    Research research = this.gameObject.AddComponent<Research>();
+                    research.mainBulletpoint = this;
+                }
                 break;
         }
 

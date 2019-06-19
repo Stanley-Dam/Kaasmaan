@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Meadow : MonoBehaviour {
-    public float cooldownTickPerMiliSecond = 0.01f;
+    public float cooldownTickPerMiliSecond = 0.05f;
     private float generateCooldownTick = 0;
     public float amountOfMilkPerLevel = 2;
     public int workingCivilianAmount = 0;

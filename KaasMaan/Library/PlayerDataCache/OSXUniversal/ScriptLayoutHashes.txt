@@ -1,6 +1,6 @@
 OSXUniversal
 PlayerPath?
-C:/Users/ditis/Desktop/Build.app
+C:/Users/ditis/Desktop/test.app
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
@@ -177,3 +177,5 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 3acff109274fcfab56b54afe2a5b25ab Assembly-CSharp.dll:.Housing
 df9eec6dd44a21a6b3e2fc6ffb7d4059 Assembly-CSharp.dll:.Factory
+2d069ec4a8d7290d791c4695af1926c6 Assembly-CSharp.dll:.MouseHover
+6b321667ea70640079bcae2c061f5410 Assembly-CSharp.dll:.Research

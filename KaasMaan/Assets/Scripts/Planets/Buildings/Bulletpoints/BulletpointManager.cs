@@ -31,6 +31,7 @@ public class BulletpointManager : MonoBehaviour {
     }
 
     public void Expand() {
+        GameManager.amountOfCheese -= (GameManager.planetLevel * (1000 * GameManager.planetLevel)) - (GameManager.planetLevel*10);
         planetSprite.localScale += new Vector3(1, 1);
         updateBulletPoints(planetSprite.localScale.x);
         generateBulletpoints(planetSprite.localScale.x);

@@ -689,6 +689,7 @@
     <Compile Include="Assets\resources\Scripts\Buildings\Factory.cs" />
     <Compile Include="Assets\resources\Scripts\Buildings\Housing.cs" />
     <Compile Include="Assets\resources\Scripts\Buildings\Meadow.cs" />
+    <Compile Include="Assets\resources\Scripts\Buildings\Research.cs" />
     <Compile Include="Assets\Scripts\Background\scrollingBackground.cs" />
     <Compile Include="Assets\Scripts\Camera\DynamicCamera.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -702,6 +703,7 @@
     <Compile Include="Assets\Scripts\Planets\Buildings\ParticleSystem\ParticleSpawning.cs" />
     <Compile Include="Assets\Scripts\Planets\Planets\MainPlanet.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\FollowMouse.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\MouseHover.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\ShopManager.cs" />
     <Compile Include="Assets\SpriteGlow\SpriteGlowEffect.cs" />
     <Compile Include="Assets\SpriteGlow\SpriteGlowMaterial.cs" />
