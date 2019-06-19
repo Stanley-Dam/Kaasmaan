@@ -21,6 +21,8 @@ public class MainBulletpoint : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if(Input.GetMouseButton(0) && this.gameObject.GetComponent<BulletpointHover>().isInRange && ShopManager.buildingTypeOnMouse != null && !hasBuildingSprite) {
+            GameManager.amountOfCheese -= ShopManager.buildingTypeOnMouse.GetBuildingCost();
+
             this.building.setBuildingType(ShopManager.buildingTypeOnMouse);
             this.building.setLevel(1);
 
@@ -44,21 +46,29 @@ public class MainBulletpoint : MonoBehaviour {
         //Adding the building script to the building object
         switch(building.getBuildingTypeID()) {
             case 0:
+                //NONE
                 break;
             case 1:
-                Factory currentBuilding = this.gameObject.AddComponent<Factory>();
-                currentBuilding.mainBulletpoint = this;
+                //FACTORY
+                Factory factory = this.gameObject.AddComponent<Factory>();
+                factory.mainBulletpoint = this;
                 //Instantiates smoke for the level 1 factory
                 GameObject Smoke = Instantiate(smoke, transform.position, Quaternion.identity);
-                Smoke.transform.SetParent(currentBuilding.transform);
+                Smoke.transform.SetParent(factory.transform);
                 Smoke.transform.localPosition = new Vector3(0, 1);
                 Smoke.transform.rotation = transform.rotation;
                 break;
             case 2:
+                //HOUSING
                 Smoke = Instantiate(smoke, transform.position, Quaternion.identity);
                 Smoke.transform.SetParent(this.transform);
                 Smoke.transform.localPosition = new Vector3(0.2f, 0.5f);
                 Smoke.transform.rotation = transform.rotation;
+                break;
+            case 3:
+                //MEADOW
+                Meadow meadow = this.gameObject.AddComponent<Meadow>();
+                meadow.mainBulletpoint = this;
                 break;
         }
 

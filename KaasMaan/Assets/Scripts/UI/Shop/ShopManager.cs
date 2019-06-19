@@ -46,6 +46,11 @@ public class ShopManager : MonoBehaviour {
     }
 
     public void SelectedBuilding(int buildingID) {
+        //Check if we can pay for this building
+        if (BuildingTypes.getBuildingFromTypeID(buildingID).GetBuildingCost() > GameManager.amountOfCheese)
+            return;
+
+        //Equip the building
         if (equipPrefab != null) {
             if (createdObjects.Count != 1) {
                 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -3f);
