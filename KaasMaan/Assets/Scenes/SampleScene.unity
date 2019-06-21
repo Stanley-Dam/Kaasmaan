@@ -2288,7 +2288,7 @@ MonoBehaviour:
   NPC: {fileID: 4158492992540238431, guid: c735968ca37264812863162bd3d7a1fd, type: 3}
   spawnCenter: {fileID: 6674797148414614423, guid: 90be1b7e6b6c147e3be05405a1ed0f3e,
     type: 3}
-  speed: 0
+  speed: 10
   bulletpointLayer: 2
   parallaxSpeedIncreasePerLayer: 0.1
   planetCenter: {fileID: 417535890}
@@ -5031,6 +5031,11 @@ PrefabInstance:
       propertyPath: buildingsPerSize
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4863670452581290957, guid: e0ed1321880bdf048a397ef573c038b9,
+        type: 3}
+      propertyPath: NPCMovement
+      value: 
+      objectReference: {fileID: 695862232}
     - target: {fileID: 4863670451074517718, guid: e0ed1321880bdf048a397ef573c038b9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

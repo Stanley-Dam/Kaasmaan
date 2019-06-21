@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingManager: {fileID: 4863670452581290962}
+  NPCMovement: {fileID: 0}
   planetCenter: {fileID: 4863670452096461742}
   planetSprite: {fileID: 4863670452219960221}
   bulletpointPrefab: {fileID: 6202546578886448941, guid: 4cfa1dc6d095c4d43a5dbac4ba7fa02f,
