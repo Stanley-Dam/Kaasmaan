@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{0F3E9CC6-6F09-FA16-29FE-540447D96AEE}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NPCs/NPCMovementScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/NPCs/NPCMovementScript.cs" Line="73" Column="11" />
-      <File FileName="Assets/Scripts/Planets/Buildings/Bulletpoints/BulletpointManager.cs" Line="75" Column="42" />
+      <File FileName="Assets/Scripts/NPCs/NPCMovementScript.cs" Line="93" Column="92" />
+      <File FileName="Assets/Scripts/Planets/Buildings/Bulletpoints/BulletpointManager.cs" Line="95" Column="94" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
