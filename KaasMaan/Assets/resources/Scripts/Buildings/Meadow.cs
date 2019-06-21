@@ -6,10 +6,9 @@ public class Meadow : MonoBehaviour {
     public float cooldownTickPerMiliSecond = 0.01f;
     private float generateCooldownTick = 0;
     public float amountOfMilkPerLevel = 2;
-    public int workingCivilianAmount = 1;
+    public int workingCivilianAmount = 0;
 
     public MainBulletpoint mainBulletpoint;
-
 
     // Start is called before the first frame update
     void Start() {

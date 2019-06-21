@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Factory : MonoBehaviour {
 
-    public float cooldownTickPerMiliSecond = 0.01f;
+    public float cooldownTickPerMiliSecond = 0.02f;
     private float generateCooldownTick = 0;
     public float amountOfCheasePerLevel = 5;
-    public int workingCivilianAmount = 1;
+    public int workingCivilianAmount = 0;
 
     public MainBulletpoint mainBulletpoint;
-
 
     // Start is called before the first frame update
     void Start() {
@@ -29,19 +28,23 @@ public class Factory : MonoBehaviour {
 
         StopCoroutine(GenerateCheeseCooldown());
         generateCooldownTick = 0;
+        GenerateTheCheese();
+    }
 
+    private void GenerateTheCheese() {
         bool canPay = false;
         float cost = (this.gameObject.GetComponent<MainBulletpoint>().getBuilding().getLevel() * workingCivilianAmount);
 
-        while(!canPay) {
+        while (!canPay) {
             canPay = (GameManager.amountOfMilk >= cost * Mathf.Ceil(amountOfCheasePerLevel / 3));
             if (!canPay) cost--;
-            if(cost <= 0) {
+            if (cost <= 0) {
                 StartCoroutine(GenerateCheeseCooldown());
+                return;
             }
         }
 
-        GameManager.amountOfMilk -= cost * Mathf.Ceil(amountOfCheasePerLevel/3);
+        GameManager.amountOfMilk -= cost * Mathf.Ceil(amountOfCheasePerLevel / 3);
         GameManager.amountOfCheese += cost * amountOfCheasePerLevel;
         StartCoroutine(GenerateCheeseCooldown());
     }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8057e7dea5d7374419528377a60cd13c
+guid: cd42d2d410056b040a49ac18445f61ff
 ScriptedImporter:
   fileIDToRecycleName:
-    100002: gameObject/factory_level_01
-    400002: gameObject/factory_level_01/Transform
-    21200002: gameObject/factory_level_01/SpriteRenderer
+    100002: gameObject/housing_level_04
+    400002: gameObject/housing_level_04/Transform
+    21200002: gameObject/housing_level_04/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -17,7 +17,7 @@ ScriptedImporter:
   svgPixelsPerUnit: 100
   gradientResolution: 128
   alignment: 9
-  customPivot: {x: 0.47048843, y: 0.09864248}
+  customPivot: {x: 0.49913892, y: 0.08864001}
   generatePhysicsShape: 0
   preserveViewport: 0
   advancedMode: 0
@@ -40,16 +40,16 @@ ScriptedImporter:
   spriteData:
     TessellationDetail: 0
     SpriteRect:
-      name: factory_level_01Sprite
+      name: housing_level_04Sprite
       originalName: 
-      pivot: {x: 0.47048843, y: 0.09864248}
+      pivot: {x: 0.49913892, y: 0.08864001}
       alignment: 9
       border: {x: 0, y: 0, z: 0, w: 0}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 92
-        height: 80
-      spriteID: d35d4396670b1d640bd6a4e0d7ae2a10
+        width: 85
+        height: 50
+      spriteID: f5252237a57092c42807bf852df047f3
     PhysicsOutlines: []
