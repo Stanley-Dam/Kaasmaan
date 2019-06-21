@@ -51,7 +51,7 @@ public class Building {
     }
 
     public void LevelUp() {
-        this.level++;
+        this.level *= 2;
     }
 
 }

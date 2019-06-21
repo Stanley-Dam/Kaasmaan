@@ -9,7 +9,7 @@ public class BulletpointHover : MonoBehaviour {
     public float mouseHoverDistance = 0.5f;
     public float normalBulletpointSize = 0.3f;
     public float zoomedBulletpointSize = 1f;
-    public float zoomPerMicroSecond = 0.1f;
+    public float zoomPerMicroSecond = 0.5f;
     public float buildingSizeMulitplier = 1f;
 
     public bool isInRange = false;
@@ -27,6 +27,7 @@ public class BulletpointHover : MonoBehaviour {
         if (this.gameObject.GetComponent<MainBulletpoint>().getBuilding().getBuildingTypeID() != 0 && !buildingZoom) {
             normalBulletpointSize *= buildingSizeMulitplier;
             zoomedBulletpointSize *= buildingSizeMulitplier;
+            zoomPerMicroSecond *= buildingSizeMulitplier;
 
             this.transform.localScale = new Vector3(normalBulletpointSize, normalBulletpointSize);
             buildingZoom = true;
@@ -60,6 +61,8 @@ public class BulletpointHover : MonoBehaviour {
     }
 
     public IEnumerator doAnimation() {
+        isInRange = true;
+
         while (this.transform.localScale.x < zoomedBulletpointSize) {
 
             this.transform.localScale += new Vector3(zoomPerMicroSecond, zoomPerMicroSecond);
@@ -67,12 +70,13 @@ public class BulletpointHover : MonoBehaviour {
 
         }
 
-        StopCoroutine(doAnimation());
         isPlayerAnimation = false;
-        isInRange = true;
+        StopCoroutine(doAnimation());
     }
 
     public IEnumerator undoAnimation() {
+        isInRange = false;
+
         while (this.transform.localScale.x > normalBulletpointSize) {
 
             this.transform.localScale -= new Vector3(zoomPerMicroSecond, zoomPerMicroSecond);
@@ -80,9 +84,8 @@ public class BulletpointHover : MonoBehaviour {
 
         }
 
-        StopCoroutine(undoAnimation());
         isPlayerAnimation = false;
-        isInRange = false;
+        StopCoroutine(undoAnimation());
     }
 
     /*

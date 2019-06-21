@@ -13,7 +13,7 @@ public class BulletpointManager : MonoBehaviour {
 
     public int buildingsPerSize = 10;
 
-    private ArrayList bulletPoints = new ArrayList();
+    public ArrayList bulletPoints = new ArrayList();
 
     private float bulletpointsDistance = 0.475f;
 
@@ -26,14 +26,20 @@ public class BulletpointManager : MonoBehaviour {
     private void Update() {
         //Testing the planet upscaling
         if(Input.GetKeyDown(KeyCode.S)) {
-            planetSprite.localScale += new Vector3(1, 1);
-            generateBulletpoints(planetSprite.localScale.x);
+            Expand();
         }
     }
 
-    public void generateBulletpoints(float planetSize) {
+    public void Expand() {
+        GameManager.amountOfCheese -= (GameManager.planetLevel * (1000 * GameManager.planetLevel)) - (GameManager.planetLevel*10);
+        planetSprite.localScale += new Vector3(1, 1);
+        updateBulletPoints(planetSprite.localScale.x);
+        generateBulletpoints(planetSprite.localScale.x);
+        GameManager.planetLevel++;
+    }
 
-        updateBulletPoints(planetSize);
+    public void generateBulletpoints(float planetSize) {
+        
         ArrayList newBulletPoints = new ArrayList();
 
         //Bulletpoint generate algorithm
@@ -67,6 +73,17 @@ public class BulletpointManager : MonoBehaviour {
     }
 
     private void updateBulletPoints(float planetSize) {
+        List<GameObject> bulletpointsList = new List<GameObject>();
+        foreach (GameObject currentObject in bulletPoints) {
+            bulletpointsList.Add(currentObject);
+        }
+
+        bulletpointsList.RemoveAll(item => item == null);
+        bulletPoints = new ArrayList();
+
+        foreach (GameObject currentObject in bulletpointsList) {
+            bulletPoints.Add(currentObject);
+        }
 
         if (bulletPoints.Count > 0) {
             //Move the existing bulletpoints

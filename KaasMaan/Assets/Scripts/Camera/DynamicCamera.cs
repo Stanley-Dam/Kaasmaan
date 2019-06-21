@@ -9,12 +9,14 @@ public class DynamicCamera : MonoBehaviour {
     public Camera cam;
 
     public float speed = 30f;
+    public float fastSpeed = 60f;
     public float extraSpacing = 3;
     public float growPerFrame = 0.1f;
     public float startZoomSize = 10;
     public float maxZoomSize = 9;
 
     public Transform background;
+    public Transform buildingViewer;
 
     private bool isZoomed = false;
     private float prevSize = 0;
@@ -39,6 +41,11 @@ public class DynamicCamera : MonoBehaviour {
     private void cameraMovement() {
         if (!isZoomed) return;
 
+        float speed = this.speed;
+
+        if (Input.GetKey(KeyCode.LeftControl))
+            speed = fastSpeed;
+
         if(Input.GetKey(KeyCode.A)) {
             trackedObjectCenter.Rotate(new Vector3(0, 0, speed * Time.deltaTime));
         }
@@ -60,6 +67,8 @@ public class DynamicCamera : MonoBehaviour {
         }
 
         background.localScale = new Vector3(cam.orthographicSize/3, cam.orthographicSize/3);
+        buildingViewer.localScale = new Vector3(cam.orthographicSize / 3, cam.orthographicSize / 3);
+        buildingViewer.localPosition = new Vector3(-(cam.orthographicSize) * 0.6f, -(cam.orthographicSize * 0.95f), 1);
 
         //When the planet gets to a size where you'll have to zoom
         if (trackedObject.localScale.x + extraSpacing >= startZoomSize && trackedObject.localScale.x > prevSize) {
