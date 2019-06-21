@@ -8,17 +8,19 @@ public class NPCMovementScript : MonoBehaviour {
     public GameObject NPC;
     public GameObject spawnCenter;
 
-    public float speed;
+    public float speed = 15;
     public int bulletpointLayer = 1;
     public float parallaxSpeedIncreasePerLayer = 0.01f;
 
     private ArrayList NPCs = new ArrayList();
 
     public Transform planetCenter;
-    private float bulletpointsDistance = 0.475f;
+    private float NPCDistance = 0.7f;
     public Transform planetSprite;
 
     public Transform mainPlanet;
+
+    
 
     // Start is called before the first frame update
     void Start() {
@@ -29,8 +31,7 @@ public class NPCMovementScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        speed = 15;
+    void Update() { 
         amountOfCivs = GameManager.amountOfCivilians;
         SpawnNPCs(amountOfCivs, planetSprite.localScale.x);
         spawnCenter.transform.Rotate(new Vector3(0, 0, (-speed * (1 + bulletpointLayer * -parallaxSpeedIncreasePerLayer)) * Time.deltaTime));
@@ -41,12 +42,12 @@ public class NPCMovementScript : MonoBehaviour {
         ArrayList newNPCs = new ArrayList();
 
         for (int i = NPCs.Count; i < amountOfPeople; i++) {
+
             int randomNumbers = Random.Range(1, 8);
 
-
             float ang = (i * 360) / (amountOfPeople * randomNumbers);
-            float xPos = planetCenter.localPosition.x + (planetSize + 1.2f) * bulletpointsDistance * Mathf.Sin(ang * Mathf.Deg2Rad);
-            float yPos = planetCenter.localPosition.y + (planetSize + 1.2f) * bulletpointsDistance * Mathf.Cos(ang * Mathf.Deg2Rad);
+            float xPos = planetCenter.localPosition.x + planetSize * NPCDistance * Mathf.Sin(ang * Mathf.Deg2Rad);
+            float yPos = planetCenter.localPosition.y + planetSize * NPCDistance * Mathf.Cos(ang * Mathf.Deg2Rad);
 
             
 
@@ -66,6 +67,42 @@ public class NPCMovementScript : MonoBehaviour {
 
         foreach (GameObject go in newNPCs) {
             NPCs.Add(go);
+        }
+    }
+
+    public void UpdateNPCs(int amountOfPeople, float planetSize) {
+        List<GameObject> NPCsList = new List<GameObject>();
+        foreach(GameObject go in NPCs) {
+            NPCsList.Add(go);
+        }
+
+        int randomNumbers = Random.Range(1, 8);
+
+        NPCsList.RemoveAll(item => item == null);
+        NPCs = new ArrayList();
+
+        foreach (GameObject go in NPCsList) {
+            NPCs.Add(go);
+        }
+
+        if(NPCs.Count > 0) {
+            int index = 0;
+            foreach (GameObject go in NPCs) {
+
+                float ang = (index * 360) / (amountOfPeople * randomNumbers);
+                float xPos = planetCenter.localPosition.x + planetSize * (NPCDistance + 0.01f) * Mathf.Sin(ang * Mathf.Deg2Rad);
+                float yPos = planetCenter.localPosition.y + planetSize * (NPCDistance + 0.01f) * Mathf.Cos(ang * Mathf.Deg2Rad);
+
+                go.transform.localPosition = new Vector3(xPos, yPos, 0);
+               
+
+                Vector3 diff = planetCenter.transform.localPosition - go.transform.localPosition;
+
+                float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+                go.transform.localRotation = Quaternion.Euler(0f, 0f, rot_z + 90);
+
+                index++;
+            }
         }
     }
 }

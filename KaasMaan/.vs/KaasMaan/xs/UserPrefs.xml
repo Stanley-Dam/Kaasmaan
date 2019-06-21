@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{0F3E9CC6-6F09-FA16-29FE-540447D96AEE}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NPCs/NPCMovementScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/NPCs/NPCMovementScript.cs" Line="54" Column="59" />
-      <File FileName="Assets/Scripts/Planets/Buildings/Bulletpoints/BulletpointManager.cs" Line="54" Column="37" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="8" Column="46" />
-      <File FileName="Assets/Scripts/UI/Shop/ShopManager.cs" Line="56" Column="91" />
+      <File FileName="Assets/Scripts/NPCs/NPCMovementScript.cs" Line="73" Column="11" />
+      <File FileName="Assets/Scripts/Planets/Buildings/Bulletpoints/BulletpointManager.cs" Line="75" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a4931493-10d7-4020-8056-8d450c3344aa" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="366f8e8d-2945-401a-a436-093bd73cfa08" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
