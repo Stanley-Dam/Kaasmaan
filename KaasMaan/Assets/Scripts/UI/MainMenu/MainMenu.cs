@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        buttonAmount = this.transform.GetChildCount();
+        buttonAmount = this.transform.childCount;
         StartCoroutine(SpawnItems());
     }
 
