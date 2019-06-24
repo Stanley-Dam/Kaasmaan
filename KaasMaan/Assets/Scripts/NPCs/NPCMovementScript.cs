@@ -35,6 +35,9 @@ public class NPCMovementScript : MonoBehaviour {
         amountOfCivs = GameManager.amountOfCivilians;
         SpawnNPCs(amountOfCivs, planetSprite.localScale.x);
         spawnCenter.transform.Rotate(new Vector3(0, 0, (-speed * (1 + bulletpointLayer * -parallaxSpeedIncreasePerLayer)) * Time.deltaTime));
+        if (amountOfCivs == 0) {
+            RemoveNPCs();
+        }
     }
 
     public void SpawnNPCs(int amountOfPeople, float planetSize) {
@@ -62,12 +65,15 @@ public class NPCMovementScript : MonoBehaviour {
             diff.Normalize();
             go.transform.localRotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
-            newNPCs.Add(go);
+            newNPCs.Add(go);        
         }
 
         foreach (GameObject go in newNPCs) {
             NPCs.Add(go);
         }
+
+        
+
     }
 
     public void UpdateNPCs(int amountOfPeople, float planetSize) {
@@ -87,7 +93,7 @@ public class NPCMovementScript : MonoBehaviour {
 
         if (NPCs.Count > 0) {
             int index = 0;
-            foreach (GameObject go in NPCs) {
+            foreach (GameObject go in NPCs) {            
 
                 float ang = (index * 360) / (amountOfPeople * randomNumbers);
                 float xPos = planetCenter.localPosition.x + planetSize * (NPCDistance + 0.01f) * Mathf.Sin(ang * Mathf.Deg2Rad);
@@ -101,8 +107,20 @@ public class NPCMovementScript : MonoBehaviour {
                 float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
                 go.transform.localRotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
+                
+
                 index++;
             }
         }
+        
     }
-}
+
+    public void RemoveNPCs() {
+        foreach (GameObject go in NPCs.ToArray()) {
+            if (amountOfCivs == 0) {
+                NPCs.Remove(go);
+                Destroy(go);
+                }       
+            }
+        }
+    }
