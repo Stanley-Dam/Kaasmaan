@@ -12,6 +12,7 @@ public class Research : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        StartCoroutine(GenerateResearchCooldown());
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class Research : MonoBehaviour {
         }
 
         StopCoroutine(GenerateResearchCooldown());
-        GameManager.researchAmount += workingCivilianAmount;
+        GameManager.researchAmount += workingCivilianAmount * mainBulletpoint.getBuilding().getLevel();
         generateCooldownTick = 0;
         StartCoroutine(GenerateResearchCooldown());
     }

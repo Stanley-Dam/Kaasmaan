@@ -704,6 +704,7 @@
     <Compile Include="Assets\Scripts\Planets\Planets\MainPlanet.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\Button.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\NumberToString.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\FollowMouse.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\MouseHover.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\ShopManager.cs" />

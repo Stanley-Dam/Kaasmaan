@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     public static float blackHoleLevelToPlanet = 0;
 
     public static float researchAmount = 0;
-    public static float researchFinish = 10000;
+    public static float researchFinish = 1000000;
 
     public static GameObject selectedBulletpoint;
 
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Image progressBar;
     [SerializeField] private Image progressBarRotten;
+    [SerializeField] private Image blackHoleBar;
 
     [SerializeField] private GameObject buildingSettings;
     [SerializeField] private GameObject buildingWorkingSettings;
@@ -65,13 +66,14 @@ public class GameManager : MonoBehaviour {
         //Update the progressBars
         progressBar.fillAmount = amountOfCheese / (planetLevel * (1000 * planetLevel));
         progressBarRotten.fillAmount = researchAmount / researchFinish;
+        blackHoleBar.fillAmount = blackHoleLevel / planetLevel;
 
         ExpandButton.active = amountOfCheese >= (planetLevel * (1000 * planetLevel));
 
         //Update the UI
-        amountOfMilkUI.text = "" + amountOfMilk;
-        amountOfCheeseUI.text = "" + amountOfCheese;
-        amountOfCiviliansUI.text = "" + amountOfCivilians;
+        amountOfMilkUI.text = "" + NumberToString.GetString(amountOfMilk);
+        amountOfCheeseUI.text = "" + NumberToString.GetString(amountOfCheese);
+        amountOfCiviliansUI.text = "" + NumberToString.GetString(amountOfCivilians);
 
         //Update the building menu
         buildingSettings.active = (selectedBulletpoint != null);
@@ -138,8 +140,8 @@ public class GameManager : MonoBehaviour {
     }
 
     private float generateCooldownTick = 0;
-    private float cooldownTickPerMiliSecond = 0.01f;
-    private float increaseSize = 0.01f;
+    private float cooldownTickPerMiliSecond = 0.02f;
+    private float increaseSize = 0.025f;
 
     private void UpdateBlackHole() {
         if(amountOfCheese > 0)
