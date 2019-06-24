@@ -130,7 +130,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4863670452488698940}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 308653046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84bca0c65fbfda4dbb40a49d9038d2b, type: 3}
@@ -139,6 +139,38 @@ MonoBehaviour:
 --- !u!4 &268740513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4863670452219960221, guid: e0ed1321880bdf048a397ef573c038b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4863670452488698940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &308653046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4863670452581290961, guid: e0ed1321880bdf048a397ef573c038b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4863670452488698940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &308653047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308653046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a51138a6ea1d48d5a21c44e8b2abf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC: {fileID: 4158492992540238431, guid: c735968ca37264812863162bd3d7a1fd, type: 3}
+  spawnCenter: {fileID: 1452317199268594988, guid: bea761c035f6343ee98a55b30fabcdba,
+    type: 3}
+  bulletpointLayer: 1
+  parallaxSpeedIncreasePerLayer: 0.01
+  planetCenter: {fileID: 417535890}
+  planetSprite: {fileID: 268740513}
+  mainPlanet: {fileID: 308653050}
+--- !u!4 &308653050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4863670452581290963, guid: e0ed1321880bdf048a397ef573c038b9,
     type: 3}
   m_PrefabInstance: {fileID: 4863670452488698940}
   m_PrefabAsset: {fileID: 0}
@@ -554,7 +586,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4863670452488698940}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 308653046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f78545e3b46b154e949975d34491ac9, type: 3}
@@ -1183,6 +1215,11 @@ PrefabInstance:
       propertyPath: buildingsPerSize
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4863670452581290957, guid: e0ed1321880bdf048a397ef573c038b9,
+        type: 3}
+      propertyPath: NPCMovement
+      value: 
+      objectReference: {fileID: 308653047}
     - target: {fileID: 4863670452581290963, guid: e0ed1321880bdf048a397ef573c038b9,
         type: 3}
       propertyPath: m_LocalPosition.x

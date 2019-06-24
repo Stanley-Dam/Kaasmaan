@@ -341,6 +341,7 @@ MonoBehaviour:
   layers:
   - {fileID: 4863670451074517716}
   - {fileID: 4863670450712876391}
+  blackHole: {fileID: 0}
   center: {fileID: 4863670452096461742}
   bulletpointLayer: 2
   parallaxSpeedIncreasePerLayer: 0.1
@@ -357,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingManager: {fileID: 4863670452581290962}
+  NPCMovement: {fileID: 0}
   planetCenter: {fileID: 4863670452096461742}
   planetSprite: {fileID: 4863670452219960221}
   bulletpointPrefab: {fileID: 6202546578886448941, guid: 4cfa1dc6d095c4d43a5dbac4ba7fa02f,
@@ -387,10 +389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84bca0c65fbfda4dbb40a49d9038d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBar: {fileID: 0}
   amountOfMilkUI: {fileID: 0}
   amountOfCheeseUI: {fileID: 0}
   amountOfCiviliansUI: {fileID: 0}
+  progressBar: {fileID: 0}
+  progressBarRotten: {fileID: 0}
+  blackHoleBar: {fileID: 0}
   buildingSettings: {fileID: 0}
   buildingWorkingSettings: {fileID: 0}
   workingCiviliansAtBuilding: {fileID: 0}

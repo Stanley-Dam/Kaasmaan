@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletpointManager : MonoBehaviour {
 
     public BuildingManager buildingManager;
+    public NPCMovementScript NPCMovement;
 
     public Transform planetCenter;
     public Transform planetSprite;
@@ -35,6 +36,7 @@ public class BulletpointManager : MonoBehaviour {
         planetSprite.localScale += new Vector3(1, 1);
         updateBulletPoints(planetSprite.localScale.x);
         generateBulletpoints(planetSprite.localScale.x);
+        NPCMovement.UpdateNPCs(GameManager.amountOfCivilians, planetSprite.localScale.x);
         GameManager.planetLevel++;
     }
 
