@@ -8,7 +8,7 @@ public class NPCMovementScript : MonoBehaviour {
     public GameObject NPC;
     public GameObject spawnCenter;
 
-    private float speed = GameManager.planetLevel * 10;
+    private float speed = 10;
     public int bulletpointLayer = 1;
     public float parallaxSpeedIncreasePerLayer = 0.01f;
 
@@ -107,7 +107,7 @@ public class NPCMovementScript : MonoBehaviour {
                 float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
                 go.transform.localRotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
-                
+                speed = 5;
 
                 index++;
             }

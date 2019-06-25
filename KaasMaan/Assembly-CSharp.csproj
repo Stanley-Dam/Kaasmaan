@@ -121,6 +121,7 @@
     <Compile Include="Assets\Scripts\Planets\Buildings\Data\BuildingTypes.cs" />
     <Compile Include="Assets\Scripts\Planets\Buildings\ParticleSystem\ParticleSpawning.cs" />
     <Compile Include="Assets\Scripts\Planets\Planets\MainPlanet.cs" />
+    <Compile Include="Assets\Scripts\UI\Info\OpenInfoScreen.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\Button.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\NumberToString.cs" />
